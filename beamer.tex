@@ -1,0 +1,138 @@
+\documentclass[usepdftitle=false,ucs]{beamer}
+% \usepackage{beamerthemesplit}
+\usepackage{graphicx,graphics}
+\usepackage{wrapfig}
+% \usepackage[ansinew]{inputenc}
+% \usepackage{ucs}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx,courier,textcomp,booktabs}
+\usepackage[scaled]{helvet}
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{xspace}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{framed, color}
+\setbeamercovered{transparent}
+\usetheme{CambridgeUS}
+% \usetheme{Warsaw}
+\usecolortheme{beaver}
+\usepackage{siunitx}
+% \usepackage{cooltooltips}
+\beamertemplatenavigationsymbolsempty
+% \setbeamertemplate{footline}[frame number]
+\usepackage{listings}
+\lstset{language=C++,
+%   commentstyle=\itshape\color{darkgreen},
+%   commentstyle=\color{darkgreen},
+%   keywordstyle=\bfseries, %\color{darkblue},
+%   stringstyle=\color{darkred},
+%   basicstyle=\ttfamily\scriptsize,
+  morekeywords={TH1F,TLorentzVector,TVector3,vector,TFile,TFitResultPtr,TF1,\
+                TGraph,TH1,TObject,TCanvas,string,Double_t,TGraphErrors},
+  basicstyle=\scriptsize,
+  numbers=left,
+  numberstyle=\tiny,%\color{gray},
+  stepnumber=1,
+  tabsize=4,
+  showspaces=false,
+  showstringspaces=false,
+  breaklines=true,
+  frame=lrtb,
+  captionpos=b,
+  extendedchars=true,
+  inputencoding=utf8,
+%   backgroundcolor=\color{ltgray}
+}
+\sisetup{
+	seperr		=	true,
+	trapambigerr	=	true,
+	openerr		=	(,
+	closeerr	=	),
+	expproduct	=	cdot,
+	padnumber	=	both,
+	stickyper	=	true,
+	per		=	reciprocal,
+	trapambigfrac	=	true,
+	repeatunits	=	false,
+	openfrac	=	(,
+	closefrac	=	),
+	prefixsymbolic 	=	true,
+	prefixproduct	=	cdot,
+	decimalsymbol	=	comma,
+% 	decimalsymbol	=	,
+    tabnumalign     =       left,
+    tabtextalign    =       left
+%   separate-uncertainty = true,
+%   multi-part-units = brackets,
+%   open-bracket = (,
+%   close-bracket = ),
+%   exponent-product = \cdot,
+%   add-decimal-zero = true,
+%   add-integer-zero = true,
+%   per-mode         =   reciprocal,
+%   prefixes-as-symbols = true,
+%   output-decimal-marker = {,},
+%   table-figures-uncertainty = 1
+}
+
+\definecolor{ellipsegreen}{rgb}{0,0.55,0.3}
+\setbeamercovered{invisible}		% making pause/uncover possible for images
+
+\newcommand{\beginbackup}{
+ \setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} \hspace*{2ex} % hier hat's sich geändert
+  \end{beamercolorbox}}%
+  \vskip0pt%
+ }
+   \newcounter{framenumbervorappendix}
+   \setcounter{framenumbervorappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumbervorappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumbervorappendix}} 
+}
+
+
+\title[KDE on Linux]{How to work with Linux and KDE as a scientist}
+\author{Thomas Murach \and Robert Riemann}
+\institute[HU Berlin]{HU Berlin}
+\date[HU, 09.03.2012]{09.03.2012}
+
+\hypersetup
+{
+	pdfauthor	=	{Thomas Murach},
+	pdftitle	=	{How to work with Linux and KDE as a scientist}
+}
+
+
+\begin{document}
+
+% \renewcommand{\inserttotalframenumber}{17}
+
+\logo{\includegraphics[height=1cm]{siegel.pdf}}
+% \frame{
+% \titlepage
+% }
+
+\maketitle
+% 
+% \frame{
+% \frametitle{Gliederung}
+% \tableofcontents
+% }
+% \section{Progress}
+\input{content.tex}
+
+\end{document}

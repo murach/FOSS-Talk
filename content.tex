@@ -1,0 +1,63 @@
+\section{Plan und Todo}
+\frame{
+\frametitle{Plan und Todo}
+TODO:
+\begin{itemize}
+  \item Installation (nach kurzer Einleitung, erwähnen: versch. Distros existieren etc.) durchführen
+  \item einleitende Worte zu KDE
+  \item Softwarestruktur in Linux + Paketmanager, zu Yast hinführen (-> exemplarisch Roberts Repo hinzufügen)
+  \item generell: coole Programme vorstellen (kurz jeweils) (Bsp.: ssh (+scp,sshfs,...); kile(?); kdevelop; mathe-programme; bash(?); git; yakuake; convert
+\end{itemize}
+}
+
+\section{SSH}
+\frame{
+\frametitle{Entferntes Arbeiten: ssh}
+\begin{itemize}
+  \item man kann bspw. Programme auf den Uni-Rechnern laufen lassen, die man selbst nicht installiert hat (z.B. Maple o.ä.)
+  \item oder: Dateien einfach von Pool-Rechnern auf seinen PC kopieren, wenn man zu Hause weiter arbeiten will
+\end{itemize}
+}
+
+\frame{
+\frametitle{Wie geht das?}
+Anmelden in Konsole:\\
+\begin{center}
+  \texttt{ssh user@pool1.physik.hu-berlin.de}
+\end{center}
+Dateien kopieren:\\
+% \begin{center}
+  \texttt{scp foo.bar user@pool1.physik.hu-berlin.de:path}\\
+  \texttt{scp user@pool1.physik.hu-berlin.de:path/file.txt .}
+% \end{center}
+}
+
+\frame{
+\frametitle{Sicherheitsaspekte}
+\begin{itemize}
+  \item gut: Authentifizierung mit verschlüsseltem Key
+  \item Key erzeugen:\\
+        \begin{center}
+          \texttt{ssh-keygen -b 1024 -t dsa}		% besser rsa?
+        \end{center}
+  \item Public Key nach $\sim$/.ssh kopieren und an Datei $\sim$/.ssh/authorized\_keys anhängen
+  \item Rechte anpassen:\\
+        \begin{center}
+          \texttt{chmod 600 $\sim$/.ssh/authorized\_keys}
+        \end{center}
+  \item schließlich: ssh-agent verwenden, um Passwort nur einmal eingeben zu müssen (pro Sitzung):
+        \begin{center}
+          \texttt{ssh-add}
+        \end{center}
+\end{itemize}
+}
+
+\section{convert}
+\frame{
+\frametitle{Bildkonvertierung mit \texttt{convert}}
+um Bilder zu konvertieren (z.B. jpg $\rightarrow$ png):
+\begin{center}
+  \texttt{convert a.jpg b.png}
+\end{center}
+
+}
