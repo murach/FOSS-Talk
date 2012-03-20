@@ -1,4 +1,6 @@
-\section{Plan und Todo}
+
+\section{Best Practice}
+
 \frame{
 \frametitle{Plan und Todo}
 TODO:
@@ -11,7 +13,7 @@ TODO:
 \end{itemize}
 }
 
-\section{SSH}
+\subsection{SSH}
 \frame{
 \frametitle{Entferntes Arbeiten: ssh}
 \begin{itemize}
@@ -53,7 +55,8 @@ Dateien kopieren:\\
 \end{itemize}
 }
 
-\section{convert}
+\subsection{kleine Helfer}
+
 \frame{
 \frametitle{Bildkonvertierung mit \texttt{convert}}
 um Bilder zu konvertieren (z.B. jpg $\rightarrow$ png):
@@ -63,7 +66,6 @@ um Bilder zu konvertieren (z.B. jpg $\rightarrow$ png):
 (benötigt das Paket „ImageMagick“)
 }
 
-\section{Vektorgraphiken konvertieren}
 \frame{
 \frametitle{Vektorgraphiken konvertieren}
 Um Vektorgraphiken zu konvertieren, gibt es viele kleine Programme:
@@ -72,14 +74,131 @@ Um Vektorgraphiken zu konvertieren, gibt es viele kleine Programme:
 
 \begin{frame}{Zwischenablage unter Linux}
   \begin{itemize}
-    \item Klipper
+    \item Wie Windows: \texttt{<Strg+C>} und \texttt{<Strg+V>}
+    \item In der Konsole und fast allen Linux-Programmen zusätzlich: \\
+          Markieren (Kopieren) und Mittle Maustaste (Einfügen)
+    \item Verwaltung der History der letzten Einträge in der Zwischenablage
+          durch \textit{Klipper} (Schere im System-Abschnitt)
   \end{itemize}
 \end{frame}
 
-\begin{frame}{All-In-One Messenger}
+\begin{frame}{Programme Abschießen}
+  Für den unwahrscheinlichen Fall, dass etwas nicht geht:
   \begin{itemize}
-    \item Verschlüsselung
+    \item In der Konsole: \\ \texttt{killall -9 app-name} \\ \textit{oder} \\
+    \texttt{<Strg>+<C>}
+    \item Graphisch: \\ \texttt{<Strg> + <Alt> + <Esc> +} Linksklick \\
+          \textit{oder} \\
+          mit dem Linux-Taskmanager Systemmonitor \texttt{ksysguard}
+    \item Den Benutzer ohne weitere Rückfragen ausloggen: \\
+          $2 \times$\texttt{<Strg>+<Alt>+<Backspace>}
   \end{itemize}
+\end{frame}
 
+\section{Programme}
+
+\begin{frame}{All-In-One Messenger Kopete}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item Ende-zu-Ende Verschlüsselung (OTR)
+        \item ICQ, MSN, Jabber, Facebook, StudiVZ, Google, AIM
+        \item \LaTeX-Support
+        \item Bilder-Vorschau
+      \end{itemize}      
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \begin{figure}
+        \includegraphics[bb=0 0 493 382,keepaspectratio=true,width=\textwidth]{kopete}
+        % kopete.png: 658x510 pixel, 96dpi, 17.41x13.49 cm, bb=0 0 493 382
+        \caption{Kopete}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Everywhere-Dateimanager Dolphin}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item Tabs, 2-Spalten, Dateibaum, Vorschau, etc.
+        \item KIO: ftp, sftp, NFS, webdav und Windows-Shares (Samba)
+        \item Datein filtern, Volltextsuche mit Cache
+        \item Konsole-Integration
+      \end{itemize}      
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \begin{figure}
+        \includegraphics[keepaspectratio=true,width=\textwidth]{dolphin}
+        \caption{Dolphin}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Mails mit KMail}
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      \begin{itemize}
+        \item Offline-IMAP
+        \item Volltextsuche
+        \item Integrierte PGP/SMIME-Verschlüsselung
+        \item Anzeige der Mails nach Datum und Betreff
+      \end{itemize}      
+    \end{column}
+    \begin{column}{0.7\textwidth}
+      \begin{figure}
+        \includegraphics[keepaspectratio=true,width=\textwidth]{kmail}
+        \caption{KMail}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{wxMaxima}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.65\textwidth]{wxmaxima}
+    \caption{Maple (Mathematica) Klon: wxMaxima}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{QtOctave}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.75\textwidth]{qtoctave}
+    \caption{Matlab Klon: QtOctave}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Kile und Okular}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.95\textwidth]{kile}
+    \caption{\LaTeX-Editor Kile und PDF-Programm Okular}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Globale Systemeinstellungen mit YaST2}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.95\textwidth]{yast2}
+    \caption{Systemeinstellungen unter Linux: YaST2}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Mit Git Arbeiten}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.75\textwidth]{qgit_dolphin}
+    \caption{QGit und Dolphin mit aktiver Konsolenintegration}
+  \end{figure}  
+\end{frame}
+
+
+\begin{frame}{All-In-One Messenger}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      
+    \end{column}
+  \end{columns}
 \end{frame}
 
