@@ -1,118 +1,76 @@
-\documentclass[usepdftitle=false,ucs]{beamer}
-% \usepackage{beamerthemesplit}
-\usepackage{graphicx,graphics}
-\usepackage{wrapfig}
-% \usepackage[ansinew]{inputenc}
-% \usepackage{ucs}
-\usepackage{lmodern}
+\documentclass[xcolor=dvipsnames,compress]{beamer}
+% \documentclass[xcolor=dvipsnames,compress,handout]{beamer}
+% \documentclass[xcolor=dvipsnames,compress,trans]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{default}
 \usepackage[T1]{fontenc}
-\usepackage{mathptmx,courier,textcomp,booktabs}
-\usepackage[scaled]{helvet}
-\usepackage[ngerman]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage{xspace}
-\usepackage{tikz}
-\usetikzlibrary{decorations.pathreplacing}
-\usepackage{framed, color}
-\setbeamercovered{transparent}
-\usetheme{CambridgeUS}
-% \usetheme{Warsaw}
-\usecolortheme{beaver}
+\usepackage{ngerman}
+\usepackage{amssymb, amsmath}
+\usepackage{xfrac}
+\usepackage{hyperref}
+\usepackage{eurosym}
 \usepackage{siunitx}
-% \usepackage{cooltooltips}
-\beamertemplatenavigationsymbolsempty
-% \setbeamertemplate{footline}[frame number]
-\usepackage{listings}
-\lstset{language=C++,
-%   commentstyle=\itshape\color{darkgreen},
-%   commentstyle=\color{darkgreen},
-%   keywordstyle=\bfseries, %\color{darkblue},
-%   stringstyle=\color{darkred},
-%   basicstyle=\ttfamily\scriptsize,
-  morekeywords={TH1F,TLorentzVector,TVector3,vector,TFile,TFitResultPtr,TF1,\
-                TGraph,TH1,TObject,TCanvas,string,Double_t,TGraphErrors},
-  basicstyle=\scriptsize,
-  numbers=left,
-  numberstyle=\tiny,%\color{gray},
-  stepnumber=1,
-  tabsize=4,
-  showspaces=false,
-  showstringspaces=false,
-  breaklines=true,
-  frame=lrtb,
-  captionpos=b,
-  extendedchars=true,
-  inputencoding=utf8,
-%   backgroundcolor=\color{ltgray}
-}
 \sisetup{
-	seperr		=	true,
-	trapambigerr	=	true,
-	openerr		=	(,
-	closeerr	=	),
-	expproduct	=	cdot,
-	padnumber	=	both,
-	stickyper	=	true,
-	per		=	reciprocal,
-	trapambigfrac	=	true,
-	repeatunits	=	false,
-	openfrac	=	(,
-	closefrac	=	),
-	prefixsymbolic 	=	true,
-	prefixproduct	=	cdot,
-	decimalsymbol	=	comma,
-% 	decimalsymbol	=	,
-    tabnumalign     =       left,
-    tabtextalign    =       left
-%   separate-uncertainty = true,
-%   multi-part-units = brackets,
-%   open-bracket = (,
-%   close-bracket = ),
-%   exponent-product = \cdot,
-%   add-decimal-zero = true,
-%   add-integer-zero = true,
-%   per-mode         =   reciprocal,
+  separate-uncertainty = true,
+  multi-part-units = brackets,
+  open-bracket = (,
+  close-bracket = ),
+  exponent-product = \cdot,
+  add-decimal-zero = true,
+  add-integer-zero = true,
+  per-mode         =   reciprocal,
 %   prefixes-as-symbols = true,
 %   output-decimal-marker = {,},
-%   table-figures-uncertainty = 1
+  table-figures-uncertainty = 1,
+  load-configurations = binary,
+  load-configurations = abbreviations,
+  sticky-per
 }
 
-\definecolor{ellipsegreen}{rgb}{0,0.55,0.3}
-\setbeamercovered{invisible}		% making pause/uncover possible for images
+% \setbeamercovered{transparent}
 
-\newcommand{\beginbackup}{
- \setbeamertemplate{footline}{
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+% Design, Colors
+\usecolortheme[named=NavyBlue]{structure}
+\setbeamercolor{palette secondary}{bg=Blue,fg=white} % unten, subsection bar
+\setbeamercolor{palette tertiary}{bg=black,fg=white} % bar oben, title bar
+\setbeamercolor{titlelike}{bg=NavyBlue,fg=white}
+\setbeamercolor{block title}{bg=NavyBlue,fg=white}
+\setbeamercolor{block body}{bg=NavyBlue!10}
+\setbeamercolor{block title example}{bg=OliveGreen,fg=white}
+\setbeamercolor{block body example}{bg=OliveGreen!10}
+% Design
+
+\useinnertheme{rectangles}
+\useoutertheme[subsection=true]{miniframes}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}
+% \setbeamercolor{alerted text}{fg=red}
+% \setbeamercolor{block title defintion}{bg=black,fg=white}
+{%
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+    leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    {\usebeamerfont{title in head/foot}\insertshorttitle}%
+    \,
+    {\usebeamerfont{author in head/foot}(\insertshortauthor)}%
+    \hfill
+    {\usebeamerfont{framenumber in head/foot}\textbf{\insertframenumber}}%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} \hspace*{2ex} % hier hat's sich geändert
-  \end{beamercolorbox}}%
-  \vskip0pt%
- }
-   \newcounter{framenumbervorappendix}
-   \setcounter{framenumbervorappendix}{\value{framenumber}}
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+  \end{beamercolorbox}
 }
-\newcommand{\backupend}{
-   \addtocounter{framenumbervorappendix}{-\value{framenumber}}
-   \addtocounter{framenumber}{\value{framenumbervorappendix}} 
-}
-
+% \beamertemplatetransparentcoveredhigh
+% \beamertemplatetransparentcovereddynamicmedium 
 
 \title[KDE on Linux]{How to work with Linux and KDE as a scientist}
 \author{Thomas Murach \and Robert Riemann}
-\institute[HU Berlin]{HU Berlin}
-\date[HU, 09.03.2012]{09.03.2012}
+\institute[HU Berlin]{Humboldt-Universität zu Berlin}
+\date{\today}
 
 \hypersetup
 {
-	pdfauthor	=	{Thomas Murach},
+	pdfauthor	=	{Thomas Murach, Robert Riemann},
 	pdftitle	=	{How to work with Linux and KDE as a scientist}
 }
 
