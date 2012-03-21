@@ -1,4 +1,27 @@
 
+\section{Einleitung}
+
+\begin{frame}{Free/Libre Open Source Software (FLOSS)}
+  Bündelt Eigenschaften von:
+  \begin{itemize}
+    \item Freeware
+    \item OpenSource
+  \end{itemize}
+  Besonderheit:
+  \begin{itemize}
+    \item Benutzung für jeden Zweck
+    \item Untersuchung und Veränderung
+    \item Verbreitung
+    \item Verbreitung von Veränderungen
+  \end{itemize}
+  Lizenzen:
+  \begin{itemize}
+    \item GNU (L)GPL
+    \item BSD-, Apache-, MIT-Lizenz
+  \end{itemize}
+\end{frame}
+
+
 \section{Best Practice}
 
 \frame{
@@ -111,7 +134,9 @@ Um Vektorgraphiken zu konvertieren, gibt es viele kleine, spezielle Programme:
 
 \section{Programme}
 
-\begin{frame}{All-In-One-Messenger Kopete}
+\subsection{Kommunizieren}
+
+\begin{frame}{All-In-One Messenger Kopete}
   \begin{columns}
     \begin{column}{0.45\textwidth}
       \begin{itemize}
@@ -126,25 +151,6 @@ Um Vektorgraphiken zu konvertieren, gibt es viele kleine, spezielle Programme:
         \includegraphics[bb=0 0 493 382,keepaspectratio=true,width=\textwidth]{kopete}
         % kopete.png: 658x510 pixel, 96dpi, 17.41x13.49 cm, bb=0 0 493 382
         \caption{Kopete}
-      \end{figure}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Everywhere-Dateimanager Dolphin}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}
-      \begin{itemize}
-        \item Tabs, 2-Spalten, Dateibaum, Vorschau, etc.
-        \item KIO: ftp, sftp, NFS, webdav und Windows-Shares (Samba)
-        \item Datein filtern, Volltextsuche mit Cache
-        \item Konsole-Integration
-      \end{itemize}      
-    \end{column}
-    \begin{column}{0.55\textwidth}
-      \begin{figure}
-        \includegraphics[keepaspectratio=true,width=\textwidth]{dolphin}
-        \caption{Dolphin}
       \end{figure}
     \end{column}
   \end{columns}
@@ -169,25 +175,25 @@ Um Vektorgraphiken zu konvertieren, gibt es viele kleine, spezielle Programme:
   \end{columns}
 \end{frame}
 
-\begin{frame}{wxMaxima}
-  \begin{figure}
-    \includegraphics[keepaspectratio=true,width=0.65\textwidth]{wxmaxima}
-    \caption{Maple (Mathematica) Klon: wxMaxima}
-  \end{figure}
-\end{frame}
+\subsection{Organisieren}
 
-\begin{frame}{QtOctave}
-  \begin{figure}
-    \includegraphics[keepaspectratio=true,width=0.75\textwidth]{qtoctave}
-    \caption{Matlab Klon: QtOctave}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Kile und Okular}
-  \begin{figure}
-    \includegraphics[keepaspectratio=true,width=0.95\textwidth]{kile}
-    \caption{\LaTeX-Editor Kile und PDF-Programm Okular}
-  \end{figure}
+\begin{frame}{Everywhere-Dateimanager Dolphin}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item Tabs, 2-Spalten, Dateibaum, Vorschau, etc.
+        \item KIO: ftp, sftp, NFS, webdav und Windows-Shares (Samba)
+        \item Datein filtern, Volltextsuche mit Cache
+        \item Konsole-Integration
+      \end{itemize}      
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \begin{figure}
+        \includegraphics[keepaspectratio=true,width=\textwidth]{dolphin}
+        \caption{Dolphin}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Globale Systemeinstellungen mit YaST2}
@@ -245,27 +251,6 @@ Um Vektorgraphiken zu konvertieren, gibt es viele kleine, spezielle Programme:
   \end{columns}
 \end{frame}
 
-\begin{frame}{Editor Kate}
-  \begin{columns}
-    \begin{column}{0.35\textwidth}
-      \begin{itemize}
-        \item Hervorhebungen für \textit{alle} Sprachen
-        \item Tabs
-        \item beliebiges unterteilen der Ansicht
-        \item Konsole
-        \item Code-Folding
-        \item eigene Befehle und Plugins
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.65\textwidth}
-      \begin{figure}
-        \includegraphics[keepaspectratio=true,width=\textwidth]{kate}
-        \caption{Kate}
-      \end{figure}      
-    \end{column}
-  \end{columns}
-\end{frame}
-
 \begin{frame}{Uni-WLAN eduroam}
   \begin{columns}
     \begin{column}{0.5\textwidth}
@@ -314,14 +299,54 @@ done
  
 \end{frame}
 
+\subsection{Berechnen und Darstellen}
 
-\begin{frame}{All-In-One Messenger}
+\begin{frame}{wxMaxima}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.65\textwidth]{wxmaxima}
+    \caption{Maple (Mathematica) Klon: wxMaxima}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{QtOctave}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.75\textwidth]{qtoctave}
+    \caption{Matlab Klon: QtOctave}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Gnuplot}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.9\textwidth]{gnuplot}
+    \caption{Visualisierung mit Gnuplot}
+  \end{figure}  
+\end{frame}
+
+
+\begin{frame}{Kile und Okular}
+  \begin{figure}
+    \includegraphics[keepaspectratio=true,width=0.95\textwidth]{kile}
+    \caption{\LaTeX-Editor Kile und PDF-Programm Okular}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Editor Kate}
   \begin{columns}
-    \begin{column}{0.5\textwidth}
-      
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \item Hervorhebungen für \textit{alle} Sprachen
+        \item Tabs
+        \item beliebiges unterteilen der Ansicht
+        \item Konsole
+        \item Code-Folding
+        \item eigene Befehle und Plugins
+      \end{itemize}
     \end{column}
-    \begin{column}{0.5\textwidth}
-      
+    \begin{column}{0.65\textwidth}
+      \begin{figure}
+        \includegraphics[keepaspectratio=true,width=\textwidth]{kate}
+        \caption{Kate}
+      \end{figure}      
     \end{column}
   \end{columns}
 \end{frame}
