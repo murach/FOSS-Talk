@@ -43,7 +43,10 @@ Dateien kopieren:\\
         \begin{center}
           \texttt{ssh-keygen -b 1024 -t dsa}		% besser rsa?
         \end{center}
-  \item Public Key nach $\sim$/.ssh kopieren und an Datei $\sim$/.ssh/authorized\_keys anhängen
+  \item Public Key nach $\sim$/.ssh kopieren und an Datei $\sim$/.ssh/authorized\_keys anhängen:\\
+        \begin{center}
+          \texttt{ssh-copy-id user@pool1. ...}
+        \end{center}
   \item Rechte anpassen:\\
         \begin{center}
           \texttt{chmod 600 $\sim$/.ssh/authorized\_keys}
@@ -68,7 +71,7 @@ um Bilder zu konvertieren (z.B. jpg $\rightarrow$ png):
 
 \frame{
 \frametitle{Vektorgraphiken konvertieren}
-Um Vektorgraphiken zu konvertieren, gibt es viele kleine Programme:
+Um Vektorgraphiken zu konvertieren, gibt es viele kleine, spezielle Programme:
 \texttt{ps2pdf} bzw. \texttt{pstopdf}, \texttt{epstopdf}, etc.
 }
 
