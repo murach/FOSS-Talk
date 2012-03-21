@@ -261,6 +261,33 @@ Um Vektorgraphiken zu konvertieren, gibt es viele kleine Programme:
   \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{Shell-Programmierung}
+  \lstset{language=bash,
+          numbers=left,
+          numberstyle=\tiny,
+          showstringspaces=false,
+          aboveskip=-40pt,
+          frame=leftline
+  }
+  \vspace{2em}
+          
+  \begin{lstlisting}[caption={Beispiel zur Audio/Video Konvertierung},captionpos=b]
+#!/usr/bin/zsh
+
+# source: https://gist.github.com/1385642
+#         git://gist.github.com/1385642.git
+
+for file in ./**/*.wma; do
+  ffmpeg -i $file -f ogg -acodec libvorbis \
+         -ab 128k ${file%.*}.ogg
+  mkdir -p ./old_wma/${file%/*}
+  mv $file ./old_wma/${file}
+done
+   \end{lstlisting}
+ 
+\end{frame}
+
+
 \begin{frame}{All-In-One Messenger}
   \begin{columns}
     \begin{column}{0.5\textwidth}
